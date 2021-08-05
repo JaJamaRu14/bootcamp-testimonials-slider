@@ -1,0 +1,128 @@
+$dark-blue: hsl(240, 38%, 20%);
+$gray-blue: hsl(240, 18%, 77%);
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  color: $dark-blue;
+}
+
+.container {
+  height: 100vh;
+  background-image: url(./images/pattern-curve.svg);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+
+  @media (min-width: 1400px) {
+    max-width: 1440px;
+  }
+}
+
+.row {
+  height: inherit;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .picture {
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0px 19px 48px -28px;
+  }
+
+  .bg-dot-image {
+    padding-bottom: 10px;
+  }
+}
+
+.text-section {
+  position: relative;
+  left: 143px;
+  z-index: 10;
+  width: 632px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(./images/pattern-quotes.svg);
+  background-repeat: no-repeat;
+  background-position: top 19% left 19%;
+
+  .comment {
+    font-weight: 300;
+    width: inherit;
+    margin-top: 95px;
+  }
+
+  .person {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+
+    .name {
+      margin-right: 0.5rem;
+      font-weight: 700;
+    }
+
+    .job-title {
+      color: $gray-blue;
+      font-weight: 500;
+    }
+  }
+}
+
+.image-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  position: absolute;
+  top: 76.8%;
+  right: 36.5%;
+
+  .arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 2.5rem;
+    background-color: #fff;
+    border-radius: 100vh;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .arrow {
+    padding-bottom: 5px;
+  }
+
+  .arrows:hover {
+    background-color: $dark-blue;
+  }
+
+  .prev {
+    border-radius: 100vh 0 0 100vh;
+  }
+
+  .next {
+    border-radius: 0 100vh 100vh 0;
+  }
+}
