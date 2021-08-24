@@ -17,6 +17,12 @@ body {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    background-size: 19rem;
+  }
+}
+
 .row {
   height: inherit;
 }
@@ -39,6 +45,7 @@ body {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+    height: 100%;
   }
 }
 
@@ -68,7 +75,12 @@ body {
     width: 100%;
     height: 100%;
     left: 0;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    background-size: 4rem;
+    background-position: top 0.5% left 50%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
   }
 }
 
@@ -76,6 +88,14 @@ body {
   font-weight: 300;
   width: inherit;
   margin-top: 95px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .text-section .comment {
+    margin-top: 23px;
+    padding: 0 5px;
+  }
 }
 
 .text-section .person {
@@ -83,9 +103,33 @@ body {
   margin-top: 1rem;
 }
 
+@media screen and (max-width: 768px) {
+  .text-section .person {
+    font-size: 1rem;
+    margin-top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+}
+
 .text-section .person .name {
   margin-right: 0.5rem;
   font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .text-section .person .name {
+    margin-right: 0;
+  }
 }
 
 .text-section .person .job-title {
@@ -147,8 +191,8 @@ body {
 
 @media screen and (max-width: 768px) {
   .image-section .images .picture {
-    width: 80%;
-    height: 80%;
+    width: 75%;
+    height: 65%;
   }
 }
 
@@ -158,8 +202,9 @@ body {
 
 @media screen and (max-width: 768px) {
   .image-section .images .bg-dot-image {
-    width: 100%;
-    height: 100%;
+    width: 96%;
+    height: 80%;
+    padding-bottom: 5px;
   }
 }
 
@@ -177,6 +222,13 @@ body {
   position: absolute;
   top: 76.8%;
   right: 36.5%;
+}
+
+@media screen and (max-width: 768px) {
+  .slider {
+    top: 38.8%;
+    right: 30%;
+  }
 }
 
 .slider .arrows {
@@ -197,6 +249,12 @@ body {
   border: none;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+@media screen and (max-width: 768px) {
+  .slider .arrows {
+    width: 2.7rem;
+  }
 }
 
 .slider .arrow {
