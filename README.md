@@ -31,6 +31,7 @@ Users should be able to:
 
 ![](./design/screenshots/testimonial_slider_pc_20210826.png)
 ![](./design/screenshots/testimonial_slider_mobile_20210826.png)
+![](./design/screenshots/testimonial_slider_mobile_v2_20210826.png)
 
 ### Links
 
@@ -45,44 +46,107 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- SCSS
+- Bootstrap
+- Vanilla JS
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Making the page fully responsive is still one of the toughest challenges for me.
+Using magic css numbers like "top: 76px" and "left: 189px" is not a great way to style things but I have used them in this project.
+I would need to research more on responsive design and try avoiding bad css practices.
+There are only limited JS so I was able to get it thorough.
 
-To see how you can add code snippets, see below:
+This was my first time implementing SCSS and I definitely need to keep learning it.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+\_breakpoins.scss, \_mixin.scss, and main.scss
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+$breakpoints: (
+  'sm': 'screen and (max-width: 400px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1000px)',
+  'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+.person {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+
+  @include mq(md) {
+    font-size: 1rem;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .name {
+    margin-right: 0.5rem;
+    font-weight: 700;
+
+    @include mq(md) {
+      margin-right: 0;
+    }
+  }
+
+  .job-title {
+    color: $gray-blue;
+    font-weight: 500;
+  }
 }
 ```
 
+Setting testimonial obj and iterating over it to change the testimonials on click
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉');
-};
+const testimonials = [
+  {
+    username: 'Tanya Sinclair',
+    jobTitle: 'UX Engineer',
+    comment:
+      '  “ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ” ',
+    picture: './images/image-tanya.jpg',
+  },
+  {
+    username: 'John Tarkpor',
+    jobTitle: 'Junior Front-end Developer',
+    comment:
+      ' “ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ” ',
+    picture: './images/image-john.jpg',
+  },
+];
+
+btns.forEach(function (btn) {
+  btn.addEventListener('click', () => {
+    switchTestimonial();
+  });
+});
+
+let num = 1;
+function switchTestimonial() {
+  if (num >= testimonials.length) {
+    num = 0;
+  }
+  comment.innerText = testimonials[num].comment;
+  username.innerText = testimonials[num].username;
+  jobTitle.innerText = testimonials[num].jobTitle;
+  picture.src = testimonials[num].picture;
+
+  num++;
+}
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I would like to continue learning JS and useful libraries such as React, Vue, and Node etc.
 
 ### Useful resources
 
