@@ -88,13 +88,13 @@ body {
   font-weight: 300;
   width: inherit;
   margin-top: 95px;
-  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
   .text-section .comment {
     margin-top: 23px;
     padding: 0 5px;
+    text-align: center;
   }
 }
 
